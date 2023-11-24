@@ -8,9 +8,10 @@ require 'pry'
 # Ok
 class Hangman
   def initialize
+    @words_dictionary = File.read('./words_dictionary.json')
+    @word_data = JSON.parse(@words_dictionary)
     @word = choose_word
     system('clear')
-    @words_dictionary = File.read('./words_dictionary.json')
     @hangman_logic = HangmanLogic.new(@word)
     @hangman_board = HangmanBoard.new(@hangman_logic)
   end
@@ -24,10 +25,7 @@ class Hangman
         word = gets.chomp.upcase
         return word
       elsif response.upcase == 'RANDOM'
-        file = File.read('./words_dictionary.json')
-        binding.pry
-        data = JSON.parse(@words_dictionary)
-        word = data.keys.sample.upcase
+        word = @word_data.keys.sample.upcase
         return word
       else
         print "Please type 'custom' or 'random': "
