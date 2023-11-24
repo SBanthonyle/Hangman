@@ -64,7 +64,7 @@ class HangmanLogic
   end
 
   def letters_guessed
-    @guessed.keys.join(', ')
+    @guessed.keys
   end
 
 end

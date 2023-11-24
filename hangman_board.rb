@@ -10,7 +10,7 @@ class HangmanBoard
 
   def display_game_board
     puts "Guesses Left: #{6 - @hangman_logic.incorrect_guesses}"
-    puts "Guessed letters: #{@hangman_logic.letters_guessed}" # make more tightly encapsulated
+    puts "Guessed letters: #{@hangman_logic.letters_guessed.join(', ')}" # make more tightly encapsulated
     puts "Word: #{@hangman_logic.blank}"
   end
 end
