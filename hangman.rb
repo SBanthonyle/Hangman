@@ -3,6 +3,7 @@
 require 'json'
 require_relative 'hangman_logic'
 require_relative 'hangman_board'
+require 'pry'
 
 # Ok
 class Hangman
@@ -24,7 +25,8 @@ class Hangman
         return word
       elsif response.upcase == 'RANDOM'
         file = File.read('./words_dictionary.json')
-        data = JSON.parse(file)
+        binding.pry
+        data = JSON.parse(@words_dictionary)
         word = data.keys.sample.upcase
         return word
       else
