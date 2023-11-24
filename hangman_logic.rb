@@ -63,6 +63,10 @@ class HangmanLogic
     return true
   end
 
+  def letters_guessed
+    @guessed.keys.join(', ')
+  end
+
 end
 
 
