@@ -9,6 +9,7 @@ class Hangman
   def initialize
     @word = choose_word
     system('clear')
+    @words_dictionary = File.read('./words_dictionary.json')
     @hangman_logic = HangmanLogic.new(@word)
     @hangman_board = HangmanBoard.new(@hangman_logic)
   end
