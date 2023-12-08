@@ -67,6 +67,10 @@ class HangmanLogic
     @guessed.keys
   end
 
+  def guesses_left
+    WRONG_ANSWERS_ALLOWED - @incorrect_guesses
+  end
+
 end
 
 
