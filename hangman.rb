@@ -26,7 +26,7 @@ class Hangman
     puts "The word was #{@hangman_logic.word}."
   end
 end
-def choose_word()
+def choose_word
   words_dictionary = File.read('./words_dictionary.json')
   word_data = JSON.parse(words_dictionary)
 
